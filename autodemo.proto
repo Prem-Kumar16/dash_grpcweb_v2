@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package autodemo;
+
+service CANSignalService {
+  rpc StreamCANSignals (Empty) returns (stream CANSignal);
+}
+
+message Empty {}
+
+message CANSignal {
+  int32 speed = 1;
+  int32 revs = 2;
+}
